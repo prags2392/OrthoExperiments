@@ -60,6 +60,7 @@ for (i, imagePath) in enumerate(imagePaths):
 trainLabels = np.array(labels)
 trainFeat = np.array(features)
 model = KNeighborsClassifier(n_neighbors=1, n_jobs=-1)
+#model = KNeighborsClassifier(n_neighbors=1, n_jobs=-1,metric = 'braycurtis')		#gives the same accuracy but misclassifies different images, need to figure out the maths behind it
 model.fit(trainFeat, trainLabels)
 
 
